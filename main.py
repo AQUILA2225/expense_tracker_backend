@@ -37,6 +37,12 @@ create table if not exists expenses(
 
 con.commit()
 
+@app.get("/")
+def home():
+    return {
+        "message": "API Running Successfully"
+    }
+
 @app.post("/add_expense")
 def add_expense(playload: dict):
     
